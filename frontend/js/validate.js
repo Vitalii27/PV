@@ -5,12 +5,13 @@ var validateOption = {
     errorClass: "invalid",
     errorElement: "span",
     onfocusout: false,
+    onkeyup: false,
     messages: {
         name: {
             required: "Введите имя"
         },
         email: {
-            required: "Введите E-mail адрес"
+            required: "Введите E-mail"
         },
         phone: {
             required: "Введите телефон",
@@ -24,41 +25,41 @@ var validateOption = {
             required: "Введите номер домика"
         }
     },
-    highlight: function(element, errorClass, validClass) {
+    highlight: function (element, errorClass, validClass) {
         $(element).addClass(errorClass).removeClass(validClass);
-        setTimeout(function() {
+        setTimeout(function () {
             $(element).removeClass(errorClass);
-            $(element).next().fadeOut(500);
+            $(element).next().fadeOut(300);
 
-        }, 2000);
+        }, 1500);
     },
-    unhighlight: function(element, errorClass, validClass) {
+    unhighlight: function (element, errorClass, validClass) {
         $(element).removeClass(errorClass).addClass(validClass);
     },
-    submitHandler: function(form) {
+    submitHandler: function (form) {
         ajaxSubmit.call(form);
     }
 
 };
 
-$(function() {
+$(function () {
 
     var $form = $(".js-validate");
     // custom error messages
     jQuery.extend(jQuery.validator.messages, {
         required: "Поле не может быть пустым.",
         remote: "Поле заполнено неверно.",
-        email: "Введите корректный E-mail адрес, например energoclub@gmail.com",
+        email: "Некорректный E-mail",
         phone: ""
 
     });
 
-    $form.each(function() { // <- selects every <form> on set
+    $form.each(function () { // <- selects every <form> on set
         // init validation plugin
         $(this).validate(validateOption);
 
         // prevent default form submitted
-        $(this).on("submit", function(e) {
+        $(this).on("submit", function (e) {
             e.preventDefault();
         });
     });
