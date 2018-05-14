@@ -1,0 +1,60 @@
+/* VENDOR */
+
+@import "partials/vendor/normalize";
+//@import "partials/vendor/clearfix";
+@import "partials/vendor/bootstrap-4/bootstrap-grid";
+
+/* VENDOR END */
+
+
+/* -------------------- */
+
+
+/* VARIABLES */
+
+@import "partials/common/variables";
+@import "partials/common/fonts";
+
+/* VARIABLES END */
+
+
+/* COMMON */
+
+@import "partials/common/best-practices";
+@import "partials/common/common";
+@import "partials/common/typography";
+@import "partials/common/service-classes";
+
+/* COMMON END */
+
+
+/* -------------------- */
+
+
+/* LAYOUT */
+
+@import "partials/layout/layout";
+
+/* LAYOUT END */
+
+
+/* -------------------- */
+
+
+/* BLOCKS */
+
+@import "partials/components/home";
+
+/* BLOCKS END*/
+
+
+/* -------------------- */
+
+
+/* GENERAL */
+
+
+/* GENERAL END */
+
+
+/* -------------------- */
