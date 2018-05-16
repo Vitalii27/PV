@@ -1376,7 +1376,7 @@ jQuery.support = (function() {
 
 	// Preliminary tests
 	div.setAttribute("className", "t");
-	div.innerHTML = "   <link/><table></table><a href='/a' style='top:1px;float:left;opacity:.55;'>a</a><input type='checkbox'/>";
+	div.innerHTML = "   <link/><table.html></table.html><a href='/a' style='top:1px;float:left;opacity:.55;'>a</a><input type='checkbox'/>";
 
 	all = div.getElementsByTagName( "*" );
 	a = div.getElementsByTagName( "a" )[ 0 ];
@@ -1551,8 +1551,8 @@ jQuery.support = (function() {
 		paddingMarginBorderVisibility = paddingMarginBorder + "0;visibility:hidden;";
 		style = "style='" + positionTopLeftWidthHeight + paddingMarginBorder + "5px solid #000;";
 		html = "<div " + style + "display:block;'><div style='" + paddingMarginBorder + "0;display:block;overflow:hidden;'></div></div>" +
-			"<table " + style + "' cellpadding='0' cellspacing='0'>" +
-			"<tr><td></td></tr></table>";
+			"<table.html " + style + "' cellpadding='0' cellspacing='0'>" +
+			"<tr><td></td></tr></table.html>";
 
 		container = document.createElement("div");
 		container.style.cssText = paddingMarginBorderVisibility + "width:0;height:0;position:static;top:0;margin-top:" + conMarginTop + "px";
@@ -1562,21 +1562,21 @@ jQuery.support = (function() {
 		div = document.createElement("div");
 		container.appendChild( div );
 
-		// Check if table cells still have offsetWidth/Height when they are set
-		// to display:none and there are still other visible table cells in a
-		// table row; if so, offsetWidth/Height are not reliable for use when
+		// Check if table.html cells still have offsetWidth/Height when they are set
+		// to display:none and there are still other visible table.html cells in a
+		// table.html row; if so, offsetWidth/Height are not reliable for use when
 		// determining if an element has been hidden directly using
 		// display:none (it is still safe to use offsets if a parent element is
 		// hidden; don safety goggles and see bug #4512 for more information).
 		// (only IE 8 fails this test)
-		div.innerHTML = "<table><tr><td style='" + paddingMarginBorder + "0;display:none'></td><td>t</td></tr></table>";
+		div.innerHTML = "<table.html><tr><td style='" + paddingMarginBorder + "0;display:none'></td><td>t</td></tr></table.html>";
 		tds = div.getElementsByTagName( "td" );
 		isSupported = ( tds[ 0 ].offsetHeight === 0 );
 
 		tds[ 0 ].style.display = "";
 		tds[ 1 ].style.display = "none";
 
-		// Check if empty table cells still have offsetWidth/Height
+		// Check if empty table.html cells still have offsetWidth/Height
 		// (IE <= 8 fail this test)
 		support.reliableHiddenOffsets = isSupported && ( tds[ 0 ].offsetHeight === 0 );
 
@@ -5749,10 +5749,10 @@ var nodeNames = "abbr|article|aside|audio|bdi|canvas|data|datalist|details|figca
 	wrapMap = {
 		option: [ 1, "<select multiple='multiple'>", "</select>" ],
 		legend: [ 1, "<fieldset>", "</fieldset>" ],
-		thead: [ 1, "<table>", "</table>" ],
-		tr: [ 2, "<table><tbody>", "</tbody></table>" ],
-		td: [ 3, "<table><tbody><tr>", "</tr></tbody></table>" ],
-		col: [ 2, "<table><tbody></tbody><colgroup>", "</colgroup></table>" ],
+		thead: [ 1, "<table.html>", "</table.html>" ],
+		tr: [ 2, "<table.html><tbody>", "</tbody></table.html>" ],
+		td: [ 3, "<table.html><tbody><tr>", "</tr></tbody></table.html>" ],
+		col: [ 2, "<table.html><tbody></tbody><colgroup>", "</colgroup></table.html>" ],
 		area: [ 1, "<map>", "</map>" ],
 		_default: [ 0, "", "" ]
 	},
@@ -6415,16 +6415,16 @@ jQuery.extend({
 						div = div.lastChild;
 					}
 
-					// Remove IE's autoinserted <tbody> from table fragments
+					// Remove IE's autoinserted <tbody> from table.html fragments
 					if ( !jQuery.support.tbody ) {
 
-						// String was a <table>, *may* have spurious <tbody>
+						// String was a <table.html>, *may* have spurious <tbody>
 						var hasBody = rtbody.test(elem),
 							tbody = tag === "table" && !hasBody ?
 								div.firstChild && div.firstChild.childNodes :
 
 								// String was a bare <thead> or <tfoot>
-								wrap[1] === "<table>" && !hasBody ?
+								wrap[1] === "<table.html>" && !hasBody ?
 									div.childNodes :
 									[];
 

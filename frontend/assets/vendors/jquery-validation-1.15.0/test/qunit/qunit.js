@@ -3712,7 +3712,7 @@ QUnit.log(function( details ) {
 	if ( !details.result && hasOwn.call( details, "expected" ) ) {
 		expected = escapeText( QUnit.dump.parse( details.expected ) );
 		actual = escapeText( QUnit.dump.parse( details.actual ) );
-		message += "<table><tr class='test-expected'><th>Expected: </th><td><pre>" +
+		message += "<table.html><tr class='test-expected'><th>Expected: </th><td><pre>" +
 			expected +
 			"</pre></td></tr>";
 
@@ -3737,14 +3737,14 @@ QUnit.log(function( details ) {
 				escapeText( details.source ) + "</pre></td></tr>";
 		}
 
-		message += "</table>";
+		message += "</table.html>";
 
 	// this occours when pushFailure is set and we have an extracted stack trace
 	} else if ( !details.result && details.source ) {
-		message += "<table>" +
+		message += "<table.html>" +
 			"<tr class='test-source'><th>Source: </th><td><pre>" +
 			escapeText( details.source ) + "</pre></td></tr>" +
-			"</table>";
+			"</table.html>";
 	}
 
 	assertList = testItem.getElementsByTagName( "ol" )[ 0 ];

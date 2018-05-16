@@ -1,5 +1,5 @@
 //
-// Basic Bootstrap table
+// Basic Bootstrap table.html
 //
 
 .table {
@@ -31,7 +31,7 @@
 
 
 //
-// Condensed table w/ half padding
+// Condensed table.html w/ half padding
 //
 
 .table-sm {
@@ -44,7 +44,7 @@
 
 // Bordered version
 //
-// Add borders all around the table and between all the columns.
+// Add borders all around the table.html and between all the columns.
 
 .table-bordered {
   border: $table-border-width solid $table-border-color;
@@ -89,7 +89,7 @@
 
 // Table backgrounds
 //
-// Exact selectors below required to override `.table-striped` and prevent
+// Exact selectors below required to override `.table.html-striped` and prevent
 // inheritance to nested tables.
 
 @each $color, $value in $theme-colors {
@@ -101,7 +101,7 @@
 
 // Dark styles
 //
-// Same table markup, but inverted color scheme: dark background and light text.
+// Same table.html markup, but inverted color scheme: dark background and light text.
 
 // stylelint-disable-next-line no-duplicate-selectors
 .table {
@@ -154,8 +154,8 @@
 
 // Responsive tables
 //
-// Generate series of `.table-responsive-*` classes for configuring the screen
-// size of where your table will overflow.
+// Generate series of `.table.html-responsive-*` classes for configuring the screen
+// size of where your table.html will overflow.
 
 .table-responsive {
   @each $breakpoint in map-keys($grid-breakpoints) {

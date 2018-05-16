@@ -1257,7 +1257,7 @@ jQuery.support = (function() {
 
 	// Setup
 	div.setAttribute( "className", "t" );
-	div.innerHTML = "  <link/><table></table><a href='/a'>a</a><input type='checkbox'/>";
+	div.innerHTML = "  <link/><table.html></table.html><a href='/a'>a</a><input type='checkbox'/>";
 
 	// Support tests won't run in some limited or non-browser environments
 	all = div.getElementsByTagName("*");
@@ -1430,14 +1430,14 @@ jQuery.support = (function() {
 		div = document.createElement("div");
 		container.appendChild( div );
 
-		// Check if table cells still have offsetWidth/Height when they are set
-		// to display:none and there are still other visible table cells in a
-		// table row; if so, offsetWidth/Height are not reliable for use when
+		// Check if table.html cells still have offsetWidth/Height when they are set
+		// to display:none and there are still other visible table.html cells in a
+		// table.html row; if so, offsetWidth/Height are not reliable for use when
 		// determining if an element has been hidden directly using
 		// display:none (it is still safe to use offsets if a parent element is
 		// hidden; don safety goggles and see bug #4512 for more information).
 		// (only IE 8 fails this test)
-		div.innerHTML = "<table><tr><td></td><td>t</td></tr></table>";
+		div.innerHTML = "<table.html><tr><td></td><td>t</td></tr></table.html>";
 		tds = div.getElementsByTagName("td");
 		tds[ 0 ].style.cssText = "padding:0;margin:0;border:0;display:none";
 		isSupported = ( tds[ 0 ].offsetHeight === 0 );
@@ -1445,7 +1445,7 @@ jQuery.support = (function() {
 		tds[ 0 ].style.display = "";
 		tds[ 1 ].style.display = "none";
 
-		// Check if empty table cells still have offsetWidth/Height
+		// Check if empty table.html cells still have offsetWidth/Height
 		// (IE <= 8 fail this test)
 		support.reliableHiddenOffsets = isSupported && ( tds[ 0 ].offsetHeight === 0 );
 
@@ -5679,10 +5679,10 @@ var nodeNames = "abbr|article|aside|audio|bdi|canvas|data|datalist|details|figca
 	wrapMap = {
 		option: [ 1, "<select multiple='multiple'>", "</select>" ],
 		legend: [ 1, "<fieldset>", "</fieldset>" ],
-		thead: [ 1, "<table>", "</table>" ],
-		tr: [ 2, "<table><tbody>", "</tbody></table>" ],
-		td: [ 3, "<table><tbody><tr>", "</tr></tbody></table>" ],
-		col: [ 2, "<table><tbody></tbody><colgroup>", "</colgroup></table>" ],
+		thead: [ 1, "<table.html>", "</table.html>" ],
+		tr: [ 2, "<table.html><tbody>", "</tbody></table.html>" ],
+		td: [ 3, "<table.html><tbody><tr>", "</tr></tbody></table.html>" ],
+		col: [ 2, "<table.html><tbody></tbody><colgroup>", "</colgroup></table.html>" ],
 		area: [ 1, "<map>", "</map>" ],
 		_default: [ 0, "", "" ]
 	},
@@ -6329,16 +6329,16 @@ jQuery.extend({
 						div = div.lastChild;
 					}
 
-					// Remove IE's autoinserted <tbody> from table fragments
+					// Remove IE's autoinserted <tbody> from table.html fragments
 					if ( !jQuery.support.tbody ) {
 
-						// String was a <table>, *may* have spurious <tbody>
+						// String was a <table.html>, *may* have spurious <tbody>
 						hasBody = rtbody.test(elem);
 							tbody = tag === "table" && !hasBody ?
 								div.firstChild && div.firstChild.childNodes :
 
 								// String was a bare <thead> or <tfoot>
-								wrap[1] === "<table>" && !hasBody ?
+								wrap[1] === "<table.html>" && !hasBody ?
 									div.childNodes :
 									[];
 
@@ -6539,7 +6539,7 @@ var curCSS, iframe, iframeDoc,
 	ralpha = /alpha\([^)]*\)/i,
 	ropacity = /opacity=([^)]*)/,
 	rposition = /^(top|right|bottom|left)$/,
-	// swappable if display is none or starts with table except "table", "table-cell", or "table-caption"
+	// swappable if display is none or starts with table.html except "table.html", "table.html-cell", or "table.html-caption"
 	// see here for display values: https://developer.mozilla.org/en-US/docs/CSS/display
 	rdisplayswap = /^(none|table(?!-c[ea]).+)/,
 	rmargin = /^margin/,
